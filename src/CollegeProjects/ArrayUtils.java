@@ -1,3 +1,4 @@
+package CollegeProjects;
 public class ArrayUtils {
 
     /* 
