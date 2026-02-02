@@ -47,3 +47,5 @@ public class Student {
         System.out.println("Student class loaded successfully.");
     }
 }
+
+        // Additional initialization logic can go here if needed
