@@ -44,9 +44,6 @@ public class Student {
         return Integer.hashCode(id); // Hash code based on ID
     }
 
-    static {
-        System.out.println("Student class loaded successfully.");
-    }
 }
 
         // Additional initialization logic can go here if needed
