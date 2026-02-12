@@ -37,7 +37,7 @@ public class ArraysArrayList {
             ArrayList<String> names = new ArrayList<>();
             names.add("Alice");
             names.add("Bob");
-            names.add(123); // This will cause a compile-time error because the list is of type String
+            list.add(123); // This will cause a compile-time error because the list is of type String
             names.add("Charlie");
 
             for (String x : names) {
