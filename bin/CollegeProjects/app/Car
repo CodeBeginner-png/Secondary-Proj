@@ -50,4 +50,5 @@ public class Car {
             WheelsStr.setLength(WheelsStr.length() - 2);
         }
         return "Car{engine=" + engine.toString() + ", wheels=[" + WheelsStr.toString() + "]}";
+    }
 }

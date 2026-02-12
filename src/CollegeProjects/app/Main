@@ -6,6 +6,7 @@ import parts.Engine;
 public class Main { 
     public static void main(String[] args) { 
         Scanner scanner = new Scanner(System.in);
+        
         try {
             // Ask user for engine details
             System.out.print("Enter engine type (e.g., gasoline, diesel, electric): ");
