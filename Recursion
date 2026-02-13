@@ -1,0 +1,44 @@
+public class Recursion {
+
+    // Method to calculate factorial of a number
+    public static int factorial(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Input must be a non-negative integer.");
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+
+    // Method to calculate the sum of an array of integers4
+
+    /*
+    
+    */
+    public static int sumArray(int[] arr, int index) {}
+
+
+    public static void main(String[] args) {
+        // Test the recursive methods here
+        /* main method to test all three methods:
+        Call factoral(5) and print the result.
+        Call sumArray using an array like (2, 4, 6, 8).
+        Call fibonacci(7) and print the result.
+         */
+
+        // Test factorial
+        int factorialResult = factorial(5);
+        System.out.println("Factorial of 5: " + factorialResult);
+        
+        // Test sumArray
+        int[] array = {2, 4, 6, 8};
+        int sumArrayResult = sumArray(array, 0);
+        System.out.println("Sum of array elements: " + sumArrayResult);
+        
+        // Test fibonacci
+        int fibonacciResult = fibonacci(7);
+        System.out.println("Fibonacci of 7: " + fibonacciResult);
+            }
+}
