@@ -2,22 +2,53 @@ public class Recursion {
 
     // Method to calculate factorial of a number
     public static int factorial(int n) {
+
         if (n < 0) {
-            throw new IllegalArgumentException("Input must be a non-negative integer.");
+            return -1; // base case: factoral of 0 is 1
         }
-        if (n == 0 || n == 1) {
-            return 1;
+
+        return n * factorial(n - 1); // Recursive case: n! = n * (n - 1)!
+        // return (n == 0) ? 1 : n * factorial(n - 1); // Alternative using ternary operator
+    }
+
+    // Method to calculate the sum of an array of integers
+    /*
+    
+    sumArray(int[] arr, int index)
+    Write a recursive method that returns the total sum of the array.
+    The base case happens when index reaches the end of the array.
+    The recursive case adds the current element at index to the sum of the rest: arr[index] + sumArray(arr, index + 1)
+    */
+
+    public static int sumArray(int[] arr, int index) {
+        if (index >= arr.length) {
+            return 0; // Base case: When index reaches the end of array, return 0
         }
-        return n * factorial(n - 1);
+
+        // 2 + result of calling sumArray with (index + 1)
+        return arr[index] + sumArray(arr, index + 1); // Recursive case: add curremt element to the sum of the rest
+          
     }
 
 
-    // Method to calculate the sum of an array of integers4
-
+    // Method to calculate the nth Fibonacci number
     /*
     
+    fibonacci(int n)
+    Write a recursive method that returns the nth Fibonacci number.
+    Use base cases for n == 0 and n ==  1.
+    The recursive case should return fibonacci(n - 1) + fibonacci(n - 2)
     */
-    public static int sumArray(int[] arr, int index) {}
+    public static int fibonacci(int n) {
+        if (n == 0) {
+            return 0; // Base case: Fibonacci(0) is 0
+        }
+        if (n == 1) {
+            return 1; // Base case: Fibonacci(1) is 1
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case: fibonacci(n) = fibonacci(n - 1) + fibonacci(n - 2)
+        // return (n == 0) ? 0 : (n == 1) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+    }
 
 
     public static void main(String[] args) {
