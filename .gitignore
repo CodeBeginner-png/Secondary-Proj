@@ -1,0 +1,22 @@
+# Compiled Java files
+*.class
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build directories
+bin/
+build/
+target/
+dist/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp

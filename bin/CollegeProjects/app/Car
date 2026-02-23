@@ -11,8 +11,8 @@ public class Car {
 
     // Constructor
     public Car(Engine engine, Wheel[] wheels) {
-        this.engine = engine;
-        this.wheels = wheels;
+
+
     }
 
     // Getters
@@ -50,5 +50,4 @@ public class Car {
             WheelsStr.setLength(WheelsStr.length() - 2);
         }
         return "Car{engine=" + engine.toString() + ", wheels=[" + WheelsStr.toString() + "]}";
-    }
 }
