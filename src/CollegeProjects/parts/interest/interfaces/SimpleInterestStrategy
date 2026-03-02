@@ -1,0 +1,29 @@
+package interest;
+import interest.interfaces.InterestStrategy;
+
+
+public class SimpleInterestStrategy implements InterestStrategy {
+    private double ratePerent;
+    private double timeYears;
+
+    public SimpleInterestStrategy(double ratePercent) {
+        this(ratePercent, 1.0); // Default time is 1 year
+    }
+
+    public SimpleInterestStrategy(double ratePercent, double timeYears) {
+        if (ratePercent < 0) {
+            throw new IllegalArgumentException("Rate percent cannot be negative.");
+        }
+        if (timeYears < 0) {
+            throw new IllegalArgumentException("Time in years cannot be negative.");
+        }
+        this.ratePercent = ratePercent;
+        this.timeYears = timeYears;
+    }
+
+    @Override
+    public double calculate(double balance) {
+        // Simple Interest = (P * R * T) / 100, where Rate is a percentage and T is time in years
+        return (balance * timeYears * ratePercent) / 100.0;
+    }
+}

@@ -1,0 +1,34 @@
+package interest;
+import interest.interfaces.InterestStrategy;
+
+
+public class TiredInterestStrategy implements InterestStrategy {
+    private double baseRate;
+    private double bonusRate;
+    private double threshold;
+
+    public TiredInterestStrategy(double baseRate, double bonusRate, double threshold) {
+        if (baseRate < 0) {
+            throw new IllegalArgumentException("Base rate cannot be negative.");
+        }
+        if (threshold < 0) {
+            throw new IllegalArgumentException("Threshold cannot be negative.");
+        }
+        this.baseRate = baseRate;
+        this.bonusRate = bonusRate;
+        this.threshold = threshold;
+    }
+
+    @Override
+    public double calculate(double balance) {
+        if (balance <= 0) {
+            return 0.0; // No interest for non-positive balances
+        }
+        double baseInterest = balance * baseRate;
+        if (balance > threshold) {
+             return baseInterest;
+        }
+        double amountAboveThreshold = balance - threshold;
+        return baseInterest + (amountAboveThreshold * bonusRate);
+    }
+}

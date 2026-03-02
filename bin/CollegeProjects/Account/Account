@@ -1,0 +1,62 @@
+package account;
+
+public abstract class Account {
+    private String Owner;
+    protected double balance;
+
+    protected Account(String owner, double initialBalance) {
+        if (owner == null || owner.isBlank()) {
+            throw new IllegalArgumentException("Owner name cannot be null or empty.");
+        }
+        if (initialBalance < 0) {
+            throw new IllegalArgumentException("Initial balance cannot be negative.");
+        }
+        this.Owner = owner;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be positive.");
+        }
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
+        }
+        if (balance - amount < 0) {
+            throw new IllegalArgumentException("Insufficient funds for withdrawal.");
+        }
+        balance -= amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
+        }
+        if (balance -= amount < 0) {
+            throw new IllegalArgumentException("Insufficient funds for withdrawal.");
+        }
+        balance -= amount;
+    }
+
+    public void widthdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
+        }
+        if (balance - amount < 0) {
+            throw new IllegalArgumentException("Insufficient funds for withdrawal.");
+        }
+        balance -= amount;
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Account Owner: %s, Balance: %.2f", Owner, balance);
+}

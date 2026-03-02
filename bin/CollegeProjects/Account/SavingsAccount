@@ -1,0 +1,38 @@
+    package account;
+
+    public class SavingsAccount extends Account {
+        private int withdrawalLimit;
+        private int withdrawalsMade;
+
+        public SavingsAccount(String owner, double initialBalance, int withdrawalLimit) {
+            super(owner, initialBalance);
+            if (withdrawalLimit < 0) {
+                throw new IllegalArgumentException("Withdrawal limit cannot be negative.");
+            }
+            this.withdrawalLimit = withdrawalLimit;
+            this.withdrawalsMade = 0;
+        }
+
+        @Override
+        public void withdraw(double amount) {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Withdrawal amount must be positive.");
+            }
+            if (withdrawalsMade >= withdrawalLimit) {
+                throw new IllegalArgumentException("Withdrawal limit exceeded.");
+            }
+            if (balance - amount < 0) {
+                throw new IllegalArgumentException("Insufficient funds.");
+            }
+            balance -= amount;
+            withdrawalsMade++;
+        }
+
+        @Override
+        public String toString() {
+            int remaining = withdrawalLimit - withdrawalsMade;
+            // Include remaining withdrawals in the string for visibility while keeping method count minimal
+            return String.format("SavingsAccount%s, Remaining Withdrawals=%d]",
+                super.toString().replace("Account", ""), remaining);
+    }
+}
