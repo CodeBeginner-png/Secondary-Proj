@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+public class StudentManager {
+
+  public static void main(String[] args) { 
+    ArrayList<String> students = new ArrayList<String>();
+    students.add("Tom");
+    students.add("Alan");
+    students.add("Kyle");
+    
+    students.add(0, "Alice"); // Insert element at the beginning of the list (index 0)
+
+    System.out.println(students);
+  } 
+}
