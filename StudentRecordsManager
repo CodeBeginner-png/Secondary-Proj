@@ -1,10 +1,15 @@
-public class StudentManager {
+import java.util.ArrayList;
 
-    CREATE table students (
-        id INT PRIMARY KEY,
-        firstName VARCHAR(50),
-        lastName VARCHAR(50),
-        gpa DOUBLE
-    );
+public class StudentRecordsManager {
 
+  public static void main(String[] args) { 
+    ArrayList<String> students = new ArrayList<String>();
+    students.add("Tom");
+    students.add("Alan");
+    students.add("Kyle");
+    
+    students.add(0, "Alice"); // Insert element at the beginning of the list (index 0)
+
+    System.out.println(students);
+  } 
 }
